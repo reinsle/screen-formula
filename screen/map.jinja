@@ -1,0 +1,18 @@
+{% set screen = salt['grains.filter_by']({
+    'Debian': {
+        'pkg': 'screen',
+        'screenrc': '/etc/screenrc',
+        'screenrc_src': 'salt://screen/files/screenrc',
+    },
+    'RedHat': {
+        'pkg': 'screen',
+        'screenrc': '/etc/screenrc',
+        'screenrc_src': 'salt://screen/files/screenrc',
+    },
+    'Arch': {
+        'pkg': 'screen',
+        'screenrc': '/etc/screenrc',
+        'screenrc_src': 'salt://screen/files/screenrc',
+    },
+}, merge=salt['pillar.get']('screen:lookup')) %}
+
